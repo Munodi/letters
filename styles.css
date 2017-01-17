@@ -1,0 +1,50 @@
+body {
+	background-color: whitesmoke;
+	font-size: 16pt;
+}
+
+#board {
+	display: inline-block;
+}
+
+.letter-col {
+	font-size: 18pt;
+	width: 3ch;
+	height: 3ch;
+	min-width: 3ch;
+	border-color: cyan;
+	border-style: ridge;
+	color: white;
+	background: blue;
+	text-align: center;
+}
+
+.letter-col:empty {
+    background-color: cyan;
+}
+
+#consvowel-selector {
+	width: 100%;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#consbutton, #vowelbutton {
+	width: 50%;
+	background-color: blue;
+	border: 1px grey solid;
+	color: white;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#consbutton:hover, #vowelbutton:hover {
+	background-color: lightgrey;
+	cursor: pointer;
+	color: blue;
+}
+
+#vowelbutton {
+	text-align: right;
+}
