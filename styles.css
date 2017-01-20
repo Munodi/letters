@@ -1,10 +1,10 @@
 body {
 	background-color: whitesmoke;
-	font-size: 16pt;
 }
 
 #board {
 	display: inline-block;
+	font-size: 16pt;
 }
 
 .letter-col {

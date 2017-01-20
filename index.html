@@ -18,11 +18,39 @@
 
 		<link rel="stylesheet" type="text/css" href="styles.css">
 
-		<script type="text/javascript" src="letters.js"></script>
+		<script src="letters.js"></script>
 		<title>Letters</title>
 	</head>
 
 	<body>
+		<div class="modal fade" tabindex="-1" role="dialog" id="helpModal" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">How to play</h4>
+					</div>
+					<div class="modal-body">
+						<h2>Touch/mouse</h2>
+						<ul>
+							<li>To pick consonants and vowels click their respective buttons</li>
+							<li>Tap the letter you want to use and it will be automatically moved to the second row. To remove a letter tap the second row</li>
+						</ul>
+						<h2>Keyboard</h2>
+						<ul>
+							<li>To pick consonants and vowels type 'c' and 'v' respectively</li>
+							<li>Type the letter you want to use and it will be automatically moved to the second row. To remove a letter type backspace or delete</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<label class="checkbox-inline" id="dont-show-help-holder">
+							<input type="checkbox" autocomplete="off" id="dont-show-help">Don't show again
+						</label>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 		<div id="board">
 			
 			<table id="letters-table">

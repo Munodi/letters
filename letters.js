@@ -109,5 +109,35 @@ $(function() {
 		vowelsSelectedCount = 0;
 
 		paintCells();
-	})
+	});
+
+	// If localStorage variable that should be page specific is not set then show the modal
+	// In some circumstances localStorage is not available. Also iOS Safari in private mode has a quota of 0 so setItem always fails
+	function storageAvailable(type) {
+		try {
+			var storage = window[type],
+				x = '__storage_test__';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		}
+		catch(e) {
+			return false;
+		}
+	}
+
+	if(storageAvailable('localStorage')) {
+		if(localStorage.getItem(location.href + "/doNotShowHelp") !== "true") {
+			$("#helpModal").modal();
+
+			$("#helpModal").on("hidden.bs.modal", function (e) {
+				if(document.getElementById("dont-show-help").checked) {
+					try { localStorage.setItem(location.href + "/doNotShowHelp", "true"); } catch (e) { console.log(e); }
+				}
+			});
+		}
+	} else {	// if cannot use localStorage then hide checkbox and display anyway
+		document.getElementById("dont-show-help-holder").style.display = "none";
+		$("#helpModal").modal();
+	}
 });
