@@ -3,20 +3,27 @@ body {
 }
 
 #board {
-	display: inline-block;
-	font-size: 16pt;
+	width: 90vw;
+	margin: 12px auto 0px;
+	/*border: 2px solid darkblue;*/
+}
+
+#letters-table {
+	table-layout: fixed;
+    width: 100%;
+    height: 20vw;
+    max-height: 20vw; /* not quite sure why I put this here */
 }
 
 .letter-col {
-	font-size: 18pt;
-	width: 3ch;
-	height: 3ch;
-	min-width: 3ch;
+	font-size: 8vw;
+	height: 10vw;
 	border-color: cyan;
 	border-style: ridge;
 	color: white;
 	background: blue;
 	text-align: center;
+	line-height: 0px;
 }
 
 .letter-col:empty {
@@ -28,6 +35,7 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	font-size: calc(16px + 1.5vw);
 }
 
 #consbutton, #vowelbutton {
