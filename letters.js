@@ -1,5 +1,61 @@
 "use strict";
 $(function() {
+
+	const scrabbleLetterDistribution = Object.freeze({
+		"A": 9,
+		"B": 2,
+		"C": 2,
+		"D": 4,
+		"E": 12,
+		"F": 2,
+		"G": 3,
+		"H": 2,
+		"I": 9,
+		"J": 1,
+		"K": 1,
+		"L": 4,
+		"M": 2,
+		"N": 6,
+		"O": 8,
+		"P": 2,
+		"Q": 1,
+		"R": 6,
+		"S": 4,
+		"T": 6,
+		"U": 4,
+		"V": 2,
+		"W": 2,
+		"X": 1,
+		"Y": 2,
+		"Z": 1
+	});
+
+	class LetterGenerator {
+		constructor(distribution) {
+			this.vowelChoices = "";
+			this.consonantChoices = "";
+			for (var key in distribution)
+				if (/^[AEIOU]$/.test(key))
+					this.vowelChoices += key.repeat(distribution[key])
+				else if (/^[BCDFGHJKLMNPQRSTVWXYZ]$/.test(key))
+					this.consonantChoices += key.repeat(distribution[key]);
+		}
+
+		nextVowel() {
+			const randomIndex = Math.floor(Math.random() * this.vowelChoices.length);
+			const randomLetter = this.vowelChoices.charAt(randomIndex);
+			this.vowelChoices = this.vowelChoices.slice(0, randomIndex) + this.vowelChoices.slice(randomIndex + 1);
+			return randomLetter;
+		}
+
+		nextConsonant() {
+			const randomIndex = Math.floor(Math.random() * this.consonantChoices.length);
+			const randomLetter = this.consonantChoices.charAt(randomIndex);
+			this.consonantChoices = this.consonantChoices.slice(0, randomIndex) + this.consonantChoices.slice(randomIndex + 1);
+			return randomLetter;
+		}
+	}
+
 	var jumbledLetters = Array(9).fill("");	// array of strings, can have blanks as they are removed
 	var wordLetters = [];		// used more like a list, strings pushed and popped
 
@@ -8,14 +64,13 @@ $(function() {
 	const maxConsonantCount = 6;
 	var vowelsSelectedCount = 0;
 	const maxVowelCount = 5;
+
+	var letterGen = new LetterGenerator(scrabbleLetterDistribution);
+
 	var handleConsonantButton = function() {
 		if(lettersSelectedCount < 9 && consonantsSelectedCount < maxConsonantCount) {
-			const consonants = "BCDFGHJKLMNPQRSTVWXYZ";
-			jumbledLetters[lettersSelectedCount] = consonants.charAt(Math.floor(Math.random() * consonants.length));
-			$(".letter-col").each(function(index) {
-				if(index === lettersSelectedCount)
-					$(this).text(jumbledLetters[index]);
-			});
+			jumbledLetters[lettersSelectedCount] = letterGen.nextConsonant();
+			paintCells();
 			++lettersSelectedCount;
 			++consonantsSelectedCount;
 		}
@@ -24,12 +79,8 @@ $(function() {
 
 	var handleVowelButton = function() {
 		if(lettersSelectedCount < 9 && vowelsSelectedCount < maxVowelCount) {
-			const vowels = "AEIOU";
-			jumbledLetters[lettersSelectedCount] = vowels.charAt(Math.floor(Math.random() * vowels.length));
-			$(".letter-col").each(function(index) {
-				if(index === lettersSelectedCount)
-					$(this).text(jumbledLetters[index]);
-			});
+			jumbledLetters[lettersSelectedCount] = letterGen.nextVowel();
+			paintCells();
 			++lettersSelectedCount;
 			++vowelsSelectedCount;
 		}
@@ -107,6 +158,8 @@ $(function() {
 		lettersSelectedCount = 0;
 		consonantsSelectedCount = 0;
 		vowelsSelectedCount = 0;
+
+		letterGen = new LetterGenerator(scrabbleLetterDistribution);
 
 		paintCells();
 	});
