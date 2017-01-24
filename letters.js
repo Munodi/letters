@@ -32,27 +32,23 @@ $(function() {
 
 	class LetterGenerator {
 		constructor(distribution) {
-			this.vowelChoices = "";
-			this.consonantChoices = "";
-			for (var key in distribution)
+			this.vowelChoices = [];
+			this.consonantChoices = [];
+			for (var key of Object.keys(distribution))	// change to const when FF supports it
 				if (/^[AEIOU]$/.test(key))
-					this.vowelChoices += key.repeat(distribution[key])
+					for (let i = 0; i < distribution[key]; ++i) this.vowelChoices.push(key);
 				else if (/^[BCDFGHJKLMNPQRSTVWXYZ]$/.test(key))
-					this.consonantChoices += key.repeat(distribution[key]);
+					for (let i = 0; i < distribution[key]; ++i) this.consonantChoices.push(key);
 		}
 
 		nextVowel() {
 			const randomIndex = Math.floor(Math.random() * this.vowelChoices.length);
-			const randomLetter = this.vowelChoices.charAt(randomIndex);
-			this.vowelChoices = this.vowelChoices.slice(0, randomIndex) + this.vowelChoices.slice(randomIndex + 1);
-			return randomLetter;
+			return this.vowelChoices.splice(randomIndex, 1)[0];
 		}
 
 		nextConsonant() {
 			const randomIndex = Math.floor(Math.random() * this.consonantChoices.length);
-			const randomLetter = this.consonantChoices.charAt(randomIndex);
-			this.consonantChoices = this.consonantChoices.slice(0, randomIndex) + this.consonantChoices.slice(randomIndex + 1);
-			return randomLetter;
+			return this.consonantChoices.splice(randomIndex, 1)[0];
 		}
 	}
 
@@ -153,7 +149,7 @@ $(function() {
 
 	$("#reset-button").click(function() {
 		jumbledLetters.fill("");
-		wordLetters = [];
+		wordLetters.length = 0;
 
 		lettersSelectedCount = 0;
 		consonantsSelectedCount = 0;
