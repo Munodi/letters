@@ -3,31 +3,34 @@ body {
 }
 
 #board {
-	width: 90vw;
-	margin: 12px auto 0px;
-	/*border: 2px solid darkblue;*/
+	width: 100%;
+	margin: 1vmin auto 0px;
+	border: 1px solid dimgrey;
 }
 
 #letters-table {
 	table-layout: fixed;
-    width: 100%;
-    height: 20vw;
-    max-height: 20vw; /* not quite sure why I put this here */
+	width: 100%;
 }
 
 .letter-col {
-	font-size: 8vw;
-	height: 10vw;
+	font-size: 10vw;
+	height: 11vw;
 	border-color: cyan;
 	border-style: ridge;
 	color: white;
-	background: blue;
+	background: darkblue;
 	text-align: center;
 	line-height: 0px;
+	border-width: 2px;
 }
 
 .letter-col:empty {
-    background-color: cyan;
+	background-color: cyan;
+}
+
+.letter-col:not(:empty) {
+	cursor: pointer;
 }
 
 #consvowel-selector {
@@ -36,23 +39,205 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 	font-size: calc(16px + 1.5vw);
+	margin-top: calc(10px + 1vw);
 }
 
 #consbutton, #vowelbutton {
 	width: 50%;
-	background-color: blue;
+	background-color: darkblue;
 	border: 1px grey solid;
 	color: white;
 	padding-left: 4px;
 	padding-right: 4px;
+	cursor: pointer;
 }
 
 #consbutton:hover, #vowelbutton:hover {
 	background-color: lightgrey;
-	cursor: pointer;
-	color: blue;
+	color: darkblue;
 }
 
 #vowelbutton {
 	text-align: right;
+}
+
+#reset-button {
+	position: fixed;
+	bottom: 1vmin;
+	left: 1vmin;
+}
+
+@media only screen and (min-width: 302px) {
+	#board {
+		width: calc(30px * 9 + 4px + 4px);
+		border-width: 2px;
+	}
+
+	#letters-table {
+		height: auto;
+	}
+
+	.letter-col {
+		font-size: 27px;
+		height: 30px;
+		width:	30px;
+
+		border-width: 4px;
+	}
+}
+
+@media only screen and (min-width: 320px) {		/* minimum of 12px on either side */
+	#board {
+		width: calc(32px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 29px;	/* 9/10 * height */
+		height: 32px;		/* height == width */
+		width:	32px;
+	}
+}
+
+@media only screen and (min-width: 356px) {
+	#board {
+		width: calc(36px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 32px;
+		height: 36px;
+		width:	36px;
+	}
+}
+
+@media only screen and (min-width: 392px) {
+	#board {
+		width: calc(40px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 36px;
+		height: 40px;
+		width:	40px;
+	}
+}
+
+@media only screen and (min-width: 482px) {
+	#board {
+		width: calc(50px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 45px;
+		height: 50px;
+		width:	50px;
+	}
+}
+
+@media only screen and (min-width: 572px) {
+	#board {
+		width: calc(60px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 54px;
+		height: 60px;
+		width:	60px;
+	}
+}
+
+@media only screen and (min-width: 662px) {
+	#board {
+		width: calc(70px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 63px;
+		height: 70px;
+		width:	70px;
+	}
+}
+
+@media only screen and (min-width: 752px) {
+	#board {
+		width: calc(80px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 72px;
+		height: 80px;
+		width:	80px;
+	}
+}
+
+@media only screen and (min-width: 842px) {
+	#board {
+		width: calc(90px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 81px;
+		height: 90px;
+		width:	90px;
+	}
+}
+
+@media only screen and (min-width: 932px) {
+	#board {
+		width: calc(100px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 90px;
+		height: 100px;
+		width:	100px;
+	}
+}
+
+@media only screen and (min-width: 1022px) {
+	#board {
+		width: calc(110px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 99px;
+		height: 110px;
+		width:	110px;
+	}
+}
+
+@media only screen and (min-width: 1112px) {
+	#board {
+		width: calc(120px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 108px;
+		height: 120px;
+		width:	120px;
+	}
+}
+
+@media only screen and (min-width: 1202px) {
+	#board {
+		width: calc(130px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 117px;
+		height: 130px;
+		width:	130px;
+	}
+}
+
+@media only screen and (min-width: 1292px) {
+	#board {
+		width: calc(140px * 9 + 4px + 4px);
+	}
+
+	.letter-col {
+		font-size: 126px;
+		height: 140px;
+		width:	140px;
+	}
 }
