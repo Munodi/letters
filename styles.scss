@@ -1,0 +1,107 @@
+body {
+	background-color: whitesmoke;
+}
+
+#board {
+	width: 100%;
+	margin: 1vmin auto 0px;
+	border: 1px solid dimgrey;
+}
+
+#letters-table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.letter-col {
+	font-size: 10vw;
+	height: 11vw;
+	border-color: cyan;
+	border-style: ridge;
+	color: white;
+	background: darkblue;
+	text-align: center;
+	line-height: 0px;
+	border-width: 2px;
+}
+
+.letter-col:empty {
+	background-color: cyan;
+}
+
+.letter-col:not(:empty) {
+	cursor: pointer;
+}
+
+#consvowel-selector {
+	width: 100%;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-size: calc(16px + 1.5vw);
+	margin-top: calc(10px + 1vw);
+}
+
+#consbutton, #vowelbutton {
+	width: 50%;
+	background-color: darkblue;
+	border: 1px grey solid;
+	color: white;
+	padding-left: 4px;
+	padding-right: 4px;
+	cursor: pointer;
+}
+
+#consbutton:hover, #vowelbutton:hover {
+	background-color: lightgrey;
+	color: darkblue;
+}
+
+#vowelbutton {
+	text-align: right;
+}
+
+#reset-button {
+	position: fixed;
+	bottom: 1vmin;
+	left: 1vmin;
+}
+
+@media only screen and (min-width: 30px * 9 + 4px + 4px + 6px) {
+	#board {
+		width: 30px * 9 + 4px + 4px;
+		border-width: 2px;
+	}
+
+	#letters-table {
+		height: auto;
+	}
+
+	.letter-col {
+		font-size: #{ceil((30 - 4) * 9 / 10)}px;
+		height: 30px;
+		width:	30px;
+
+		border-width: 4px;
+	}
+}
+
+$cell-width: 32;
+@while $cell-width <= 200 {
+	@media only screen and (min-width: $cell-width * 9 + 4px + 4px + if($cell-width < 50, 6px, if($cell-width < 140, 24px, 60px))) {	/* 3px, 12px or 30px minimum margin on either side */
+		#board {
+			width: $cell-width * 9 + 4px + 4px;
+		}
+
+		.letter-col {
+			font-size: #{ceil(($cell-width - 4) * 9 / 10)}px;
+			height: #{$cell-width}px;
+			width:	#{$cell-width}px;
+		}
+	}
+	@if $cell-width < 70 {
+		$cell-width: $cell-width + 2;
+	} @else {
+		$cell-width: $cell-width + 10;
+	}
+}

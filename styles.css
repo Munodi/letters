@@ -1,243 +1,480 @@
 body {
-	background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #board {
-	width: 100%;
-	margin: 1vmin auto 0px;
-	border: 1px solid dimgrey;
+  width: 100%;
+  margin: 1vmin auto 0px;
+  border: 1px solid dimgrey;
 }
 
 #letters-table {
-	table-layout: fixed;
-	width: 100%;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .letter-col {
-	font-size: 10vw;
-	height: 11vw;
-	border-color: cyan;
-	border-style: ridge;
-	color: white;
-	background: darkblue;
-	text-align: center;
-	line-height: 0px;
-	border-width: 2px;
+  font-size: 10vw;
+  height: 11vw;
+  border-color: cyan;
+  border-style: ridge;
+  color: white;
+  background: darkblue;
+  text-align: center;
+  line-height: 0px;
+  border-width: 2px;
 }
 
 .letter-col:empty {
-	background-color: cyan;
+  background-color: cyan;
 }
 
 .letter-col:not(:empty) {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 #consvowel-selector {
-	width: 100%;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	font-size: calc(16px + 1.5vw);
-	margin-top: calc(10px + 1vw);
+  width: 100%;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: calc(16px + 1.5vw);
+  margin-top: calc(10px + 1vw);
 }
 
 #consbutton, #vowelbutton {
-	width: 50%;
-	background-color: darkblue;
-	border: 1px grey solid;
-	color: white;
-	padding-left: 4px;
-	padding-right: 4px;
-	cursor: pointer;
+  width: 50%;
+  background-color: darkblue;
+  border: 1px grey solid;
+  color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+  cursor: pointer;
 }
 
 #consbutton:hover, #vowelbutton:hover {
-	background-color: lightgrey;
-	color: darkblue;
+  background-color: lightgrey;
+  color: darkblue;
 }
 
 #vowelbutton {
-	text-align: right;
+  text-align: right;
 }
 
 #reset-button {
-	position: fixed;
-	bottom: 1vmin;
-	left: 1vmin;
+  position: fixed;
+  bottom: 1vmin;
+  left: 1vmin;
+}
+
+@media only screen and (min-width: 284px) {
+  #board {
+    width: 278px;
+    border-width: 2px;
+  }
+  #letters-table {
+    height: auto;
+  }
+  .letter-col {
+    font-size: 24px;
+    height: 30px;
+    width: 30px;
+    border-width: 4px;
+  }
 }
 
 @media only screen and (min-width: 302px) {
-	#board {
-		width: calc(30px * 9 + 4px + 4px);
-		border-width: 2px;
-	}
-
-	#letters-table {
-		height: auto;
-	}
-
-	.letter-col {
-		font-size: 27px;
-		height: 30px;
-		width:	30px;
-
-		border-width: 4px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 296px;
+  }
+  .letter-col {
+    font-size: 26px;
+    height: 32px;
+    width: 32px;
+  }
 }
 
-@media only screen and (min-width: 320px) {		/* minimum of 12px on either side */
-	#board {
-		width: calc(32px * 9 + 4px + 4px);
-	}
+@media only screen and (min-width: 320px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 314px;
+  }
+  .letter-col {
+    font-size: 27px;
+    height: 34px;
+    width: 34px;
+  }
+}
 
-	.letter-col {
-		font-size: 29px;	/* 9/10 * height */
-		height: 32px;		/* height == width */
-		width:	32px;
-	}
+@media only screen and (min-width: 338px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 332px;
+  }
+  .letter-col {
+    font-size: 29px;
+    height: 36px;
+    width: 36px;
+  }
 }
 
 @media only screen and (min-width: 356px) {
-	#board {
-		width: calc(36px * 9 + 4px + 4px);
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 350px;
+  }
+  .letter-col {
+    font-size: 31px;
+    height: 38px;
+    width: 38px;
+  }
+}
 
-	.letter-col {
-		font-size: 32px;
-		height: 36px;
-		width:	36px;
-	}
+@media only screen and (min-width: 374px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 368px;
+  }
+  .letter-col {
+    font-size: 33px;
+    height: 40px;
+    width: 40px;
+  }
 }
 
 @media only screen and (min-width: 392px) {
-	#board {
-		width: calc(40px * 9 + 4px + 4px);
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 386px;
+  }
+  .letter-col {
+    font-size: 35px;
+    height: 42px;
+    width: 42px;
+  }
+}
 
-	.letter-col {
-		font-size: 36px;
-		height: 40px;
-		width:	40px;
-	}
+@media only screen and (min-width: 410px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 404px;
+  }
+  .letter-col {
+    font-size: 36px;
+    height: 44px;
+    width: 44px;
+  }
+}
+
+@media only screen and (min-width: 428px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 422px;
+  }
+  .letter-col {
+    font-size: 38px;
+    height: 46px;
+    width: 46px;
+  }
+}
+
+@media only screen and (min-width: 446px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 440px;
+  }
+  .letter-col {
+    font-size: 40px;
+    height: 48px;
+    width: 48px;
+  }
 }
 
 @media only screen and (min-width: 482px) {
-	#board {
-		width: calc(50px * 9 + 4px + 4px);
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 458px;
+  }
+  .letter-col {
+    font-size: 42px;
+    height: 50px;
+    width: 50px;
+  }
+}
 
-	.letter-col {
-		font-size: 45px;
-		height: 50px;
-		width:	50px;
-	}
+@media only screen and (min-width: 500px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 476px;
+  }
+  .letter-col {
+    font-size: 44px;
+    height: 52px;
+    width: 52px;
+  }
+}
+
+@media only screen and (min-width: 518px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 494px;
+  }
+  .letter-col {
+    font-size: 45px;
+    height: 54px;
+    width: 54px;
+  }
+}
+
+@media only screen and (min-width: 536px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 512px;
+  }
+  .letter-col {
+    font-size: 47px;
+    height: 56px;
+    width: 56px;
+  }
+}
+
+@media only screen and (min-width: 554px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 530px;
+  }
+  .letter-col {
+    font-size: 49px;
+    height: 58px;
+    width: 58px;
+  }
 }
 
 @media only screen and (min-width: 572px) {
-	#board {
-		width: calc(60px * 9 + 4px + 4px);
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 548px;
+  }
+  .letter-col {
+    font-size: 51px;
+    height: 60px;
+    width: 60px;
+  }
+}
 
-	.letter-col {
-		font-size: 54px;
-		height: 60px;
-		width:	60px;
-	}
+@media only screen and (min-width: 590px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 566px;
+  }
+  .letter-col {
+    font-size: 53px;
+    height: 62px;
+    width: 62px;
+  }
+}
+
+@media only screen and (min-width: 608px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 584px;
+  }
+  .letter-col {
+    font-size: 54px;
+    height: 64px;
+    width: 64px;
+  }
+}
+
+@media only screen and (min-width: 626px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 602px;
+  }
+  .letter-col {
+    font-size: 56px;
+    height: 66px;
+    width: 66px;
+  }
+}
+
+@media only screen and (min-width: 644px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 620px;
+  }
+  .letter-col {
+    font-size: 58px;
+    height: 68px;
+    width: 68px;
+  }
 }
 
 @media only screen and (min-width: 662px) {
-	#board {
-		width: calc(70px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 63px;
-		height: 70px;
-		width:	70px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 638px;
+  }
+  .letter-col {
+    font-size: 60px;
+    height: 70px;
+    width: 70px;
+  }
 }
 
 @media only screen and (min-width: 752px) {
-	#board {
-		width: calc(80px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 72px;
-		height: 80px;
-		width:	80px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 728px;
+  }
+  .letter-col {
+    font-size: 69px;
+    height: 80px;
+    width: 80px;
+  }
 }
 
 @media only screen and (min-width: 842px) {
-	#board {
-		width: calc(90px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 81px;
-		height: 90px;
-		width:	90px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 818px;
+  }
+  .letter-col {
+    font-size: 78px;
+    height: 90px;
+    width: 90px;
+  }
 }
 
 @media only screen and (min-width: 932px) {
-	#board {
-		width: calc(100px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 90px;
-		height: 100px;
-		width:	100px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 908px;
+  }
+  .letter-col {
+    font-size: 87px;
+    height: 100px;
+    width: 100px;
+  }
 }
 
 @media only screen and (min-width: 1022px) {
-	#board {
-		width: calc(110px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 99px;
-		height: 110px;
-		width:	110px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 998px;
+  }
+  .letter-col {
+    font-size: 96px;
+    height: 110px;
+    width: 110px;
+  }
 }
 
 @media only screen and (min-width: 1112px) {
-	#board {
-		width: calc(120px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 108px;
-		height: 120px;
-		width:	120px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1088px;
+  }
+  .letter-col {
+    font-size: 105px;
+    height: 120px;
+    width: 120px;
+  }
 }
 
 @media only screen and (min-width: 1202px) {
-	#board {
-		width: calc(130px * 9 + 4px + 4px);
-	}
-
-	.letter-col {
-		font-size: 117px;
-		height: 130px;
-		width:	130px;
-	}
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1178px;
+  }
+  .letter-col {
+    font-size: 114px;
+    height: 130px;
+    width: 130px;
+  }
 }
 
-@media only screen and (min-width: 1292px) {
-	#board {
-		width: calc(140px * 9 + 4px + 4px);
-	}
+@media only screen and (min-width: 1328px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1268px;
+  }
+  .letter-col {
+    font-size: 123px;
+    height: 140px;
+    width: 140px;
+  }
+}
 
-	.letter-col {
-		font-size: 126px;
-		height: 140px;
-		width:	140px;
-	}
+@media only screen and (min-width: 1418px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1358px;
+  }
+  .letter-col {
+    font-size: 132px;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media only screen and (min-width: 1508px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1448px;
+  }
+  .letter-col {
+    font-size: 141px;
+    height: 160px;
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 1598px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1538px;
+  }
+  .letter-col {
+    font-size: 150px;
+    height: 170px;
+    width: 170px;
+  }
+}
+
+@media only screen and (min-width: 1688px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1628px;
+  }
+  .letter-col {
+    font-size: 159px;
+    height: 180px;
+    width: 180px;
+  }
+}
+
+@media only screen and (min-width: 1778px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1718px;
+  }
+  .letter-col {
+    font-size: 168px;
+    height: 190px;
+    width: 190px;
+  }
+}
+
+@media only screen and (min-width: 1868px) {
+  /* 3px, 12px or 30px minimum margin on either side */
+  #board {
+    width: 1808px;
+  }
+  .letter-col {
+    font-size: 177px;
+    height: 200px;
+    width: 200px;
+  }
 }
