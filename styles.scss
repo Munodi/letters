@@ -3,9 +3,7 @@ body {
 }
 
 #board {
-	width: 100%;
 	margin: 1vmin auto 0px;
-	border: 1px solid dimgrey;
 }
 
 #letters-table {
@@ -14,15 +12,12 @@ body {
 }
 
 .letter-col {
-	font-size: 10vw;
-	height: 11vw;
 	border-color: cyan;
 	border-style: ridge;
 	color: white;
 	background: darkblue;
 	text-align: center;
 	line-height: 0px;
-	border-width: 2px;
 }
 
 .letter-col:empty {
@@ -67,28 +62,24 @@ body {
 	left: 1vmin;
 }
 
-@media only screen and (min-width: 30px * 9 + 4px + 4px + 6px) {
-	#board {
-		width: 30px * 9 + 4px + 4px;
-		border-width: 2px;
-	}
-
-	#letters-table {
-		height: auto;
-	}
-
-	.letter-col {
-		font-size: #{ceil((30 - 4) * 9 / 10)}px;
-		height: 30px;
-		width:	30px;
-
-		border-width: 4px;
-	}
+// smallest sized content
+#board {
+	width: 30px * 9 + 4px + 4px;
+	border: 2px solid dimgrey;
 }
 
+.letter-col {
+	font-size: #{ceil((30 - 4) * 9 / 10)}px;
+	height: 30px;
+	width:	30px;
+
+	border-width: 4px;
+}
+
+// make content bigger on bigger screens
 $cell-width: 32;
 @while $cell-width <= 200 {
-	@media only screen and (min-width: $cell-width * 9 + 4px + 4px + if($cell-width < 50, 6px, if($cell-width < 140, 24px, 60px))) {	/* 3px, 12px or 30px minimum margin on either side */
+	@media only screen and (min-width: $cell-width * 9 + 4px + 4px + if($cell-width < 50, 6px, if($cell-width < 140, 24px, 60px))) {	// 3px, 12px or 30px minimum margin on either side
 		#board {
 			width: $cell-width * 9 + 4px + 4px;
 		}

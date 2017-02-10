@@ -3,9 +3,7 @@ body {
 }
 
 #board {
-  width: 100%;
   margin: 1vmin auto 0px;
-  border: 1px solid dimgrey;
 }
 
 #letters-table {
@@ -14,15 +12,12 @@ body {
 }
 
 .letter-col {
-  font-size: 10vw;
-  height: 11vw;
   border-color: cyan;
   border-style: ridge;
   color: white;
   background: darkblue;
   text-align: center;
   line-height: 0px;
-  border-width: 2px;
 }
 
 .letter-col:empty {
@@ -67,24 +62,19 @@ body {
   left: 1vmin;
 }
 
-@media only screen and (min-width: 284px) {
-  #board {
-    width: 278px;
-    border-width: 2px;
-  }
-  #letters-table {
-    height: auto;
-  }
-  .letter-col {
-    font-size: 24px;
-    height: 30px;
-    width: 30px;
-    border-width: 4px;
-  }
+#board {
+  width: 278px;
+  border: 2px solid dimgrey;
+}
+
+.letter-col {
+  font-size: 24px;
+  height: 30px;
+  width: 30px;
+  border-width: 4px;
 }
 
 @media only screen and (min-width: 302px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 296px;
   }
@@ -96,7 +86,6 @@ body {
 }
 
 @media only screen and (min-width: 320px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 314px;
   }
@@ -108,7 +97,6 @@ body {
 }
 
 @media only screen and (min-width: 338px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 332px;
   }
@@ -120,7 +108,6 @@ body {
 }
 
 @media only screen and (min-width: 356px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 350px;
   }
@@ -132,7 +119,6 @@ body {
 }
 
 @media only screen and (min-width: 374px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 368px;
   }
@@ -144,7 +130,6 @@ body {
 }
 
 @media only screen and (min-width: 392px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 386px;
   }
@@ -156,7 +141,6 @@ body {
 }
 
 @media only screen and (min-width: 410px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 404px;
   }
@@ -168,7 +152,6 @@ body {
 }
 
 @media only screen and (min-width: 428px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 422px;
   }
@@ -180,7 +163,6 @@ body {
 }
 
 @media only screen and (min-width: 446px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 440px;
   }
@@ -192,7 +174,6 @@ body {
 }
 
 @media only screen and (min-width: 482px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 458px;
   }
@@ -204,7 +185,6 @@ body {
 }
 
 @media only screen and (min-width: 500px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 476px;
   }
@@ -216,7 +196,6 @@ body {
 }
 
 @media only screen and (min-width: 518px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 494px;
   }
@@ -228,7 +207,6 @@ body {
 }
 
 @media only screen and (min-width: 536px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 512px;
   }
@@ -240,7 +218,6 @@ body {
 }
 
 @media only screen and (min-width: 554px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 530px;
   }
@@ -252,7 +229,6 @@ body {
 }
 
 @media only screen and (min-width: 572px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 548px;
   }
@@ -264,7 +240,6 @@ body {
 }
 
 @media only screen and (min-width: 590px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 566px;
   }
@@ -276,7 +251,6 @@ body {
 }
 
 @media only screen and (min-width: 608px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 584px;
   }
@@ -288,7 +262,6 @@ body {
 }
 
 @media only screen and (min-width: 626px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 602px;
   }
@@ -300,7 +273,6 @@ body {
 }
 
 @media only screen and (min-width: 644px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 620px;
   }
@@ -312,7 +284,6 @@ body {
 }
 
 @media only screen and (min-width: 662px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 638px;
   }
@@ -324,7 +295,6 @@ body {
 }
 
 @media only screen and (min-width: 752px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 728px;
   }
@@ -336,7 +306,6 @@ body {
 }
 
 @media only screen and (min-width: 842px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 818px;
   }
@@ -348,7 +317,6 @@ body {
 }
 
 @media only screen and (min-width: 932px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 908px;
   }
@@ -360,7 +328,6 @@ body {
 }
 
 @media only screen and (min-width: 1022px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 998px;
   }
@@ -372,7 +339,6 @@ body {
 }
 
 @media only screen and (min-width: 1112px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1088px;
   }
@@ -384,7 +350,6 @@ body {
 }
 
 @media only screen and (min-width: 1202px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1178px;
   }
@@ -396,7 +361,6 @@ body {
 }
 
 @media only screen and (min-width: 1328px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1268px;
   }
@@ -408,7 +372,6 @@ body {
 }
 
 @media only screen and (min-width: 1418px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1358px;
   }
@@ -420,7 +383,6 @@ body {
 }
 
 @media only screen and (min-width: 1508px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1448px;
   }
@@ -432,7 +394,6 @@ body {
 }
 
 @media only screen and (min-width: 1598px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1538px;
   }
@@ -444,7 +405,6 @@ body {
 }
 
 @media only screen and (min-width: 1688px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1628px;
   }
@@ -456,7 +416,6 @@ body {
 }
 
 @media only screen and (min-width: 1778px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1718px;
   }
@@ -468,7 +427,6 @@ body {
 }
 
 @media only screen and (min-width: 1868px) {
-  /* 3px, 12px or 30px minimum margin on either side */
   #board {
     width: 1808px;
   }
