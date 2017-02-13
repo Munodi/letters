@@ -34,7 +34,7 @@ $(function() {
 		constructor(distribution) {
 			this.vowelChoices = [];
 			this.consonantChoices = [];
-			for (var key of Object.keys(distribution))	// change to const when FF supports it
+			for (const key of Object.keys(distribution))
 				if (/^[AEIOU]$/.test(key))
 					for (let i = 0; i < distribution[key]; ++i) this.vowelChoices.push(key);
 				else if (/^[BCDFGHJKLMNPQRSTVWXYZ]$/.test(key))
@@ -52,19 +52,19 @@ $(function() {
 		}
 	}
 
-	var jumbledLetters = Array(9).fill("");	// array of strings, can have blanks as they are removed
-	var wordLetters = [];		// used more like a list, strings pushed and popped
+	const jumbledLetters = Array(9).fill("");	// array of strings, can have blanks as they are removed
+	const wordLetters = [];		// used more like a list, strings pushed and popped
 
 	var lettersSelectedCount = 0;
 	var consonantsSelectedCount = 0;
-	const maxConsonantCount = 6;
+	const MAX_CONSONANT_COUNT = 6;
 	var vowelsSelectedCount = 0;
-	const maxVowelCount = 5;
+	const MAX_VOWEL_COUNT = 5;
 
 	var letterGen = new LetterGenerator(scrabbleLetterDistribution);
 
-	var handleConsonantButton = function() {
-		if(lettersSelectedCount < 9 && consonantsSelectedCount < maxConsonantCount) {
+	const handleConsonantButton = function() {
+		if(lettersSelectedCount < 9 && consonantsSelectedCount < MAX_CONSONANT_COUNT) {
 			jumbledLetters[lettersSelectedCount] = letterGen.nextConsonant();
 			paintCells();
 			++lettersSelectedCount;
@@ -73,8 +73,8 @@ $(function() {
 	};
 	$("#consbutton").click(handleConsonantButton);
 
-	var handleVowelButton = function() {
-		if(lettersSelectedCount < 9 && vowelsSelectedCount < maxVowelCount) {
+	const handleVowelButton = function() {
+		if(lettersSelectedCount < 9 && vowelsSelectedCount < MAX_VOWEL_COUNT) {
 			jumbledLetters[lettersSelectedCount] = letterGen.nextVowel();
 			paintCells();
 			++lettersSelectedCount;
