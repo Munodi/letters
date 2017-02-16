@@ -29,7 +29,7 @@ body {
 }
 
 #consvowel-selector {
-	width: 100%;
+	display: flex;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
@@ -38,12 +38,10 @@ body {
 }
 
 #consbutton, #vowelbutton {
-	width: 50%;
+	flex: 0 0 50%;
 	background-color: darkblue;
 	border: 1px grey solid;
 	color: white;
-	padding-left: 4px;
-	padding-right: 4px;
 	cursor: pointer;
 }
 
@@ -52,8 +50,14 @@ body {
 	color: darkblue;
 }
 
+#consbutton {
+	padding-left: 4px;
+	border-right-width: 0px;	// Don't display a right-border so that there is only a 1px border around and between #consbutton and #vowelbutton
+}
+
 #vowelbutton {
 	text-align: right;
+	padding-right: 4px;
 }
 
 #reset-button {
