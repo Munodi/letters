@@ -1,5 +1,23 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
+
 body {
   background-color: whitesmoke;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#board-holder {
+  flex: 1;
 }
 
 #board {
@@ -60,10 +78,40 @@ body {
   padding-right: 4px;
 }
 
-#reset-button {
-  position: fixed;
-  bottom: 1vmin;
-  left: 1vmin;
+#bottom-controls-holder {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: calc(100% - 2vmin);
+  display: flex;
+  min-height: 34px;
+}
+
+#reset-button, #clock-button {
+  display: block;
+}
+
+#clock-button {
+  margin-left: auto;
+}
+
+#countdown-display-holder {
+  flex: 1;
+  margin: 0;
+  text-align: right;
+}
+
+#countdown-display {
+  text-align: left;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 6px 0;
+}
+
+#countdown-display.finished {
+  color: #bf0000;
+  font-weight: bold;
 }
 
 #board {
@@ -87,6 +135,9 @@ body {
     height: 32px;
     width: 32px;
   }
+  #bottom-controls-holder {
+    width: 296px;
+  }
 }
 
 @media only screen and (min-width: 320px) {
@@ -97,6 +148,9 @@ body {
     font-size: 27px;
     height: 34px;
     width: 34px;
+  }
+  #bottom-controls-holder {
+    width: 314px;
   }
 }
 
@@ -109,6 +163,9 @@ body {
     height: 36px;
     width: 36px;
   }
+  #bottom-controls-holder {
+    width: 332px;
+  }
 }
 
 @media only screen and (min-width: 356px) {
@@ -119,6 +176,9 @@ body {
     font-size: 31px;
     height: 38px;
     width: 38px;
+  }
+  #bottom-controls-holder {
+    width: 350px;
   }
 }
 
@@ -131,6 +191,9 @@ body {
     height: 40px;
     width: 40px;
   }
+  #bottom-controls-holder {
+    width: 368px;
+  }
 }
 
 @media only screen and (min-width: 392px) {
@@ -141,6 +204,9 @@ body {
     font-size: 35px;
     height: 42px;
     width: 42px;
+  }
+  #bottom-controls-holder {
+    width: 386px;
   }
 }
 
@@ -153,6 +219,9 @@ body {
     height: 44px;
     width: 44px;
   }
+  #bottom-controls-holder {
+    width: 404px;
+  }
 }
 
 @media only screen and (min-width: 428px) {
@@ -163,6 +232,9 @@ body {
     font-size: 38px;
     height: 46px;
     width: 46px;
+  }
+  #bottom-controls-holder {
+    width: 422px;
   }
 }
 
@@ -175,6 +247,9 @@ body {
     height: 48px;
     width: 48px;
   }
+  #bottom-controls-holder {
+    width: 440px;
+  }
 }
 
 @media only screen and (min-width: 482px) {
@@ -185,6 +260,9 @@ body {
     font-size: 42px;
     height: 50px;
     width: 50px;
+  }
+  #bottom-controls-holder {
+    width: 458px;
   }
 }
 
@@ -197,6 +275,9 @@ body {
     height: 52px;
     width: 52px;
   }
+  #bottom-controls-holder {
+    width: 476px;
+  }
 }
 
 @media only screen and (min-width: 518px) {
@@ -207,6 +288,9 @@ body {
     font-size: 45px;
     height: 54px;
     width: 54px;
+  }
+  #bottom-controls-holder {
+    width: 494px;
   }
 }
 
@@ -219,6 +303,9 @@ body {
     height: 56px;
     width: 56px;
   }
+  #bottom-controls-holder {
+    width: 512px;
+  }
 }
 
 @media only screen and (min-width: 554px) {
@@ -229,6 +316,9 @@ body {
     font-size: 49px;
     height: 58px;
     width: 58px;
+  }
+  #bottom-controls-holder {
+    width: 530px;
   }
 }
 
@@ -241,6 +331,9 @@ body {
     height: 60px;
     width: 60px;
   }
+  #bottom-controls-holder {
+    width: 548px;
+  }
 }
 
 @media only screen and (min-width: 590px) {
@@ -251,6 +344,9 @@ body {
     font-size: 53px;
     height: 62px;
     width: 62px;
+  }
+  #bottom-controls-holder {
+    width: 566px;
   }
 }
 
@@ -263,6 +359,9 @@ body {
     height: 64px;
     width: 64px;
   }
+  #bottom-controls-holder {
+    width: 584px;
+  }
 }
 
 @media only screen and (min-width: 626px) {
@@ -273,6 +372,9 @@ body {
     font-size: 56px;
     height: 66px;
     width: 66px;
+  }
+  #bottom-controls-holder {
+    width: 602px;
   }
 }
 
@@ -285,6 +387,9 @@ body {
     height: 68px;
     width: 68px;
   }
+  #bottom-controls-holder {
+    width: 620px;
+  }
 }
 
 @media only screen and (min-width: 662px) {
@@ -295,6 +400,9 @@ body {
     font-size: 60px;
     height: 70px;
     width: 70px;
+  }
+  #bottom-controls-holder {
+    width: 638px;
   }
 }
 
@@ -307,6 +415,9 @@ body {
     height: 80px;
     width: 80px;
   }
+  #bottom-controls-holder {
+    width: 728px;
+  }
 }
 
 @media only screen and (min-width: 842px) {
@@ -317,6 +428,9 @@ body {
     font-size: 78px;
     height: 90px;
     width: 90px;
+  }
+  #bottom-controls-holder {
+    width: 818px;
   }
 }
 
@@ -329,6 +443,9 @@ body {
     height: 100px;
     width: 100px;
   }
+  #bottom-controls-holder {
+    width: 908px;
+  }
 }
 
 @media only screen and (min-width: 1022px) {
@@ -339,6 +456,9 @@ body {
     font-size: 96px;
     height: 110px;
     width: 110px;
+  }
+  #bottom-controls-holder {
+    width: 998px;
   }
 }
 
@@ -351,6 +471,9 @@ body {
     height: 120px;
     width: 120px;
   }
+  #bottom-controls-holder {
+    width: 1088px;
+  }
 }
 
 @media only screen and (min-width: 1202px) {
@@ -361,6 +484,9 @@ body {
     font-size: 114px;
     height: 130px;
     width: 130px;
+  }
+  #bottom-controls-holder {
+    width: 1178px;
   }
 }
 
@@ -373,6 +499,9 @@ body {
     height: 140px;
     width: 140px;
   }
+  #bottom-controls-holder {
+    width: 1268px;
+  }
 }
 
 @media only screen and (min-width: 1418px) {
@@ -383,6 +512,9 @@ body {
     font-size: 132px;
     height: 150px;
     width: 150px;
+  }
+  #bottom-controls-holder {
+    width: 1358px;
   }
 }
 
@@ -395,6 +527,9 @@ body {
     height: 160px;
     width: 160px;
   }
+  #bottom-controls-holder {
+    width: 1448px;
+  }
 }
 
 @media only screen and (min-width: 1598px) {
@@ -405,6 +540,9 @@ body {
     font-size: 150px;
     height: 170px;
     width: 170px;
+  }
+  #bottom-controls-holder {
+    width: 1538px;
   }
 }
 
@@ -417,6 +555,9 @@ body {
     height: 180px;
     width: 180px;
   }
+  #bottom-controls-holder {
+    width: 1628px;
+  }
 }
 
 @media only screen and (min-width: 1778px) {
@@ -428,6 +569,9 @@ body {
     height: 190px;
     width: 190px;
   }
+  #bottom-controls-holder {
+    width: 1718px;
+  }
 }
 
 @media only screen and (min-width: 1868px) {
@@ -438,5 +582,8 @@ body {
     font-size: 177px;
     height: 200px;
     width: 200px;
+  }
+  #bottom-controls-holder {
+    width: 1808px;
   }
 }

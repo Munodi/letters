@@ -160,6 +160,38 @@ $(function() {
 		paintCells();
 	});
 
+	// control start clock button
+	var clockReqId = 0;
+	$("#clock-button").click(function() {
+		$("#clock-button").addClass("hidden");
+		$("#countdown-display-holder").removeClass("hidden");
+		const startTime = performance.now();
+		var width = 1;
+		const updateClock = function() {
+			const elapsedTime = (performance.now() - startTime) / 1000.0;
+			$("#countdown-display").text(elapsedTime < 30 ? elapsedTime.toFixed(3) : 30);
+			if(elapsedTime < 30) {
+				if(width < $("#countdown-display")[0].scrollWidth) {	// make countdown-display as wide as it's ever wanted to be
+					width = $("#countdown-display")[0].scrollWidth;
+					$("#countdown-display").css("width", width);
+				}
+				clockReqId = requestAnimationFrame(updateClock);
+			} else {
+				$("#countdown-display").css("width", "").addClass("finished");
+			}
+		}
+		clockReqId = requestAnimationFrame(updateClock);
+	});
+
+	const resetClock = function() {
+		cancelAnimationFrame(clockReqId);
+		$("#countdown-display").text("").removeClass("finished");
+		$("#countdown-display-holder").addClass("hidden");
+		$("#clock-button").removeClass("hidden");
+	};
+	$("#countdown-display").click(resetClock);
+	$("#reset-button").click(resetClock);
+
 	// If localStorage variable that should be page specific is not set then show the modal
 	// In some circumstances localStorage is not available. Also iOS Safari in private mode has a quota of 0 so setItem always fails
 	function storageAvailable(type) {

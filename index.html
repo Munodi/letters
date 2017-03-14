@@ -51,40 +51,51 @@
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
-		<div id="board">
-			
-			<table id="letters-table">
-				<tr id="jumbled-letters-row">
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-				</tr>
-				<tr id="word-letters-row">
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-					<td class="letter-col"></td>
-				</tr>
-			</table>
+		<main>
+			<div id="board-holder">
+				<div id="board">
+					<table id="letters-table">
+						<tr id="jumbled-letters-row">
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+						</tr>
+						<tr id="word-letters-row">
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+							<td class="letter-col"></td>
+						</tr>
+					</table>
 
-			<div id="consvowel-selector">
-				<div id="consbutton">CONSONANT</div>
-				<div id="vowelbutton">VOWEL</div>
-			</div>
-		</div>
-		<button type="button" class="btn btn-default " id="reset-button">
-			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Reset
-		</button>
+					<div id="consvowel-selector">
+						<div id="consbutton">CONSONANT</div>
+						<div id="vowelbutton">VOWEL</div>
+					</div>
+				</div> <!-- board -->
+			</div> <!-- board-holder -->
+			<div id="bottom-controls-holder" >
+				<button type="button" class="btn btn-default" id="reset-button">
+					<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Reset
+				</button>
+
+				<div id="countdown-display-holder" class="hidden"><span id="countdown-display"></span></div>
+
+				<button type="button" class="btn btn-default" id="clock-button">
+					<span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Start clock
+				</button>
+			</div> <!-- bottom-controls-holder -->
+		</main>
 	</body>
 </html>
